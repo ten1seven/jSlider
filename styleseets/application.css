@@ -1,0 +1,43 @@
+body {
+  background: #f5f5f5;
+  margin: 50px; }
+
+.slider--control {
+  height: 52px;
+  position: relative; }
+
+.slider--track {
+  background-color: #d0d0d0;
+  display: block;
+  height: 5px;
+  left: 0;
+  margin-top: -2.5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 2; }
+
+.slider--track__increment {
+  background-color: #d0d0d0;
+  border-radius: 2px;
+  display: block;
+  height: 17px;
+  margin: -8.5px 0 0 -2px;
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  z-index: 1; }
+
+.slider--handle {
+  background-color: #34a297;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  left: 0;
+  margin: -16px 0 0 -5px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  z-index: 3; }
