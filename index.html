@@ -9,31 +9,8 @@
 		<title>BRI: Slider Control</title>
 
 		<link rel='stylesheet' href='styleseets/reset.css'>
-<link rel='stylesheet' href='styleseets/application.css'>
+		<link rel='stylesheet' href='styleseets/application.css'>
 
-		
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 	</head>
 	<body>
 
@@ -50,8 +27,8 @@
 		<button class="slider--button slider--button__next" data-direction="next">Next</button>
 
 		<script src='javascripts/libs/jquery.min.js'></script>
-<script src='javascripts/jquery.slider.js'></script>
-<script src='javascripts/application.js'></script>
+		<script src='javascripts/jquery.slider.js'></script>
+		<script src='javascripts/application.js'></script>
 
 	</body>
 </html>

@@ -1,6 +1,8 @@
+/*! jquery.slider.js v 2.0 | Author: Jeremy Fields [jeremy.fields@viget.com], 2013 | License: MIT */
+
 (function($) {
 
-	$.slider = function(el, options) {
+	$.jslider = function(el, options) {
 		// To avoid scope issues, use 'base' instead of 'this'
 		// to reference this class from internal events and functions.
 		var base = this;
@@ -10,7 +12,7 @@
 		base.el = el;
 
 		// Add a reverse reference to the DOM object
-		base.$el.data('slider', base);
+		base.$el.data('jslider', base);
 
 		base.init = function() {
 			base.append();
@@ -52,7 +54,7 @@
 		};
 
 		base.bind = function() {
-			base.$el.on('change', function() {
+			base.$el.on('change.slider', function() {
 				base.selected = base.$el.find(':selected').index();
 				base.moveHandle((base.selected * base.zoneWidth), true);
 			});
@@ -99,15 +101,18 @@
 		};
 
 		base.updateSelect = function(num) {
-			base.$el.val(base.$el.find('option').eq(num).val());
+			if (num !== base.selected) {
+				base.selected = num;
+				base.$el.val(base.$el.find('option').eq(num).val()).trigger('update');
+			}
 		};
 
 		base.init();
 	};
 
-	$.fn.slider = function(options) {
+	$.fn.jslider = function(options) {
 		return this.each(function() {
-			(new $.slider(this, options));
+			(new $.jslider(this, options));
 		});
 	};
 

@@ -7,7 +7,7 @@ var JS = JS || {};
 	var m = JS.Module = {
 
 		init: function() {
-			$('.font-size-slider').slider();
+			$('.font-size-slider').jslider();
 
 			$('.slider--button').on('click', function(e) {
 				e.preventDefault();
